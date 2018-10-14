@@ -1,0 +1,2 @@
+# justCurious
+just learning stuff
