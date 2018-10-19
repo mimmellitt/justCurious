@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="customerRepository" class="com.pluralSight.springTraining.repository.AnotherRepoCustomerRepositoryImpl"/>
+
+    <!-- declare customer service bean and inject the customer repository to use by invoking
+        SETTER INJECTION: @see CustomerServiceImpl.setCustomerRepository or
+        CONSTRUCTOR INJECTION: @see -->
+    <bean name="customerService" class="com.pluralSight.springTraining.service.CustomerServiceImpl">
+        <!-- setter injection -->
+        <!-- <property name="customerRepository" ref="customerRepository"/> -->
+        <!-- constructor injections -->
+        <constructor-arg index="0" ref="customerRepository"/>
+    </bean>
+
+</beans>
